@@ -79,14 +79,13 @@ temperatureCtoF(24);
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
 function temperatureInF(temp, unit) {
-  if (unit === "F" || "f") {
+  if (unit === 'F') {
     console.log(temp+unit);
   } else {
-    let fah = temperatureCtoF(temp);
-    console.log(fah + " F");
+    console.log(Math.round(temp * 9 / 5 + 32) + 'F');
   }
 }
-temperatureInF(24, "C");
+temperatureInF(24, 'C');
 
 /**
  * ### Challenge `makePersonObject`
@@ -104,9 +103,10 @@ temperatureInF(24, "C");
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  return {id, name, email};
 }
+console.log(makePersonObject(5, 'Leia', 'leia@leia.com'));
 
 /**
  * ### Challenge `getName`
@@ -121,10 +121,16 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
-}
+obj = {
+  id: 1, 
+  name: 'Leia', 
+  email: 'leia@leia.com',
+};
 
+function getName(name) {
+  return `Hello, my name is ${name}.`;
+}
+console.log(getName(obj.name));
 
 /**
  * ### Challenge `appleIndex`
@@ -141,9 +147,10 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
-}
+function appleIndex(arr) {
+  console.log(arr.indexOf('apple'));
+} 
+appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
 
 /**
  * ### Challenge `isItAnApple`
@@ -160,11 +167,19 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
-}
+const isItAnAppleBoolean = [];
 
-
+function isItAnApple(arr) {
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === 'apple') {
+      isItAnAppleBoolean.push('true');
+    } else {
+      isItAnAppleBoolean.push('false');
+    } 
+  }
+} 
+isItAnApple(['orange', 'apple', 'banana', 'apples', 'apple', 'mango']);
+console.log(isItAnAppleBoolean);
 
 /*
 // ⭐️ Example Test Data ⭐️
@@ -374,4 +389,8 @@ function getGermanCars(/* code here */) {
 function carMaker(/* code here */) {
   /* code here */
 }
+
+
+
+
 
