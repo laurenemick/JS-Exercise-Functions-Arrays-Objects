@@ -344,9 +344,14 @@ console.log(carYears);
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(arr, carId) {
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i].id === carId) {
+      return `This is a ${arr[i].car_make} ${arr[i].car_model}.`;
+    }
+  }
 }
+console.log(getCarInfoById(data, 1));
 
 /**
  * ### Challenge `getOlderCars`
@@ -362,9 +367,17 @@ function getCarInfoById(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+oldCarYears = [];
+
+function getOlderCars(arr, maxYear) {
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i] < maxYear){
+      oldCarYears.push(arr[i]);
+    }
+  }
 }
+getOlderCars(carYears, 2000);
+console.log(oldCarYears);
 
 /**
  * ### Challenge `getGermanCars`
@@ -379,9 +392,21 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+const germanCars = [];
+const notGermanCars = [];
+
+function getGermanCars(arr) {
+  const audi = 
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i].car_make === "Audi" || "Mercedes-Benz" || "Volkswagen" || "BMW") {
+      germanCars.push(arr[i]);
+    } else {
+      notGermanCars.push(arr[i]);
+    }
+  }
 }
+getGermanCars(data);
+console.log(germanCars);
 
 /**
  * ### Challenge `carMaker`
