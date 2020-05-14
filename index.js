@@ -396,9 +396,8 @@ const germanCars = [];
 const notGermanCars = [];
 
 function getGermanCars(arr) {
-  const audi = 
   for(let i = 0; i < arr.length; i++){
-    if (arr[i].car_make === "Audi" || "Mercedes-Benz" || "Volkswagen" || "BMW") {
+    if (arr[i].car_make === "Audi" || arr[i].car_make === "Mercedes-Benz" || arr[i].car_make === "Volkswagen" || arr[i].car_make === "BMW") {
       germanCars.push(arr[i]);
     } else {
       notGermanCars.push(arr[i]);
@@ -406,7 +405,7 @@ function getGermanCars(arr) {
   }
 }
 getGermanCars(data);
-console.log(germanCars);
+console.log(germanCars); 
 
 /**
  * ### Challenge `carMaker`
